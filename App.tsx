@@ -84,7 +84,7 @@ const getLanguageName = (lang: string) => {
 };
 
 const RENDER_BACKEND_URL = 'https://jb3ail-qualify-ai-telephone.onrender.com';
-const LOCAL_BACKEND_PORT = '3000';
+const LOCAL_BACKEND_PORT = '10000';
 
 const API_ROUTES = {
   health: '/api/health',
@@ -136,7 +136,7 @@ const getDefaultBackendUrl = () => {
   if (configuredUrl) return normalizeBackendUrl(configuredUrl);
   const isLocalhost =
     window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-  return normalizeBackendUrl(isLocalhost ? 'http://localhost:3000' : RENDER_BACKEND_URL);
+  return normalizeBackendUrl(isLocalhost ? `http://localhost:${LOCAL_BACKEND_PORT}` : RENDER_BACKEND_URL);
 };
 
 /* ── Telemetry Strip ── */
